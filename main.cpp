@@ -62,6 +62,16 @@ void swapRows(string tempGrid[rows][cols], int row1, int row2) {
     }
 }
 
+void swapCols(string tempGrid[rows][cols], int col1, int col2) {
+    tempGrid = sudoGrid;
+    string tmp = "";
+    for (int j = 0; j < rows; j++) {
+        tmp = tempGrid[j][col1];
+        tempGrid[j][col1] = tempGrid[j][col2];
+        tempGrid[j][col2] = tmp;
+    }
+}
+
 int main() {
     int m;
     int n;
@@ -73,4 +83,12 @@ int main() {
     n = 5;
     swapRows(tempGrid, 1, 3);
     printsudoGrid();
+    cout << endl << "New sudoku..." << endl << endl;
+    swapCols(tempGrid, 2, 6);
+    printsudoGrid();
+    cout << endl << "New sudoku..." << endl << endl;
+    swapCols(tempGrid, 0, 8);
+    printsudoGrid(); 
+    
+
 }
