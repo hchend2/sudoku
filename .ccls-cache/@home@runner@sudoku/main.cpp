@@ -72,12 +72,22 @@ void swapCols(string tempGrid[rows][cols], int col1, int col2) {
     }
 }
 
-bool isInRow(string tempGrid[rows][cols], int rowIndex, string str) {
+bool isInRow(string tempGrid[N][N], string str) {
     tempGrid = sudoGrid;
-    for (int i = 0; i < cols; i++) {
-       if (tempGrid[rows][i] == str ) {
+    for (int i = 0; i < N; i++) {
+       if (tempGrid[N][i] == str ) {
            return true;
        } 
+    }
+    return false;
+}
+
+bool isInCol(string tempGrid[N][N], string str) {
+    tempGrid = sudoGrid;
+    for (int j = 0; j < N; j++) {
+        if (tempGrid[j][N] == str) {
+            return true;
+        }
     }
     return false;
 }
